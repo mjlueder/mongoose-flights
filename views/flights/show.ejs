@@ -22,7 +22,7 @@
       <button>Back</button>
     </a>
   </section>
-  <h3>Tickets</h3>
+  <h2>Tickets</h2>
   <% if(flight.tickets.length) { %> 
     <table>
       <thead>
@@ -35,7 +35,7 @@
         <% flight.tickets.forEach(ticket => { %> 
           <tr>
             <td><%= ticket.seat %></td>
-            <td>$ <%= ticket.price %></td>
+            <td>$<%= ticket.price %></td>
           </tr>
         <% }) %> 
       </tbody>
@@ -43,6 +43,7 @@
   <% } else { %> 
     <h4>No Tickets Yet</h4>
   <% } %> 
+  <h3>Add Ticket</h3>
   <form action="/flights/<%= flight._id %>/tickets" method="POST">
     <label for="seat-input">Seat (A1-F99):</label>
     <input required type="text" name="seat" pattern="[A-F][1-9]\d?">
